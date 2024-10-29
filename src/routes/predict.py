@@ -22,9 +22,6 @@ async def predict_endpoint(
     current_user: UserModel = Depends(get_current_user),
     session: Session = Depends(get_session),
 ) -> Response:
-    if current_user.id != user_id:
-        raise HTTPException(status_code=HTTPStatus.FORBIDDEN, detail="Unauthorized")
-
     try:
         values = np.array(
             [
