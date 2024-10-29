@@ -7,9 +7,10 @@ engine = create_engine(Settings().DATABASE_URL)
 
 
 def create_all():
-    from domain.models_db import table_registry
+    from model import users, predictions
 
-    table_registry.metadata.create_all(engine)
+    users.table_registry.metadata.create_all(engine)
+    predictions.table_registry.metadata.create_all(engine)
 
 
 def get_session():

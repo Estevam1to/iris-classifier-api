@@ -10,7 +10,7 @@ from config.security import (
     create_access_token,
     verify_password,
 )
-from domain.models_db import User
+from model.users import User
 from schemas.schemas import Token
 
 router = APIRouter(tags=["Auth"], prefix="/api/auth")

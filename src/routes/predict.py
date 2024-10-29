@@ -1,11 +1,14 @@
-import numpy as np
-from fastapi import APIRouter, Depends, HTTPException
 from http import HTTPStatus
 
+import numpy as np
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+
+from config.database import get_session
+from config.security import get_current_user
+from model.users import UserModel
 from schemas.schemas import Request, Response
 from utils.prediction import Prediction
-from config.security import get_current_user
-from domain.models_db import User
 
 router = APIRouter(prefix="/api/predict", tags=["Predict"])
 
@@ -16,7 +19,8 @@ prediction = Prediction()
 async def predict_endpoint(
     request: Request,
     user_id: int,
-    current_user: User = Depends(get_current_user),
+    current_user: UserModel = Depends(get_current_user),
+    session: Session = Depends(get_session),
 ) -> Response:
     if current_user.id != user_id:
         raise HTTPException(status_code=HTTPStatus.FORBIDDEN, detail="Unauthorized")
@@ -30,7 +34,7 @@ async def predict_endpoint(
                 request.PetalWidthCm,
             ]
         )
-        category = prediction.predict(values)
+        category = prediction.predict(values, user_id, session)
 
         return Response(category=category)
     except Exception as e:

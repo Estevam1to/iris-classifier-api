@@ -10,3 +10,5 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     ALGORITHM: str
     ACCESS_TOKEN_EXPIRE_MINUTES: int
+    PATH_MODEL: str
+    PATH_SCALER: str

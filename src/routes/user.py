@@ -6,7 +6,7 @@ from sqlalchemy.sql.expression import select
 
 from config.database import get_session
 from config.security import get_password_hash
-from domain.models_db import User
+from model.users import User
 from schemas.schemas import UserPublic, UserSchema
 
 router = APIRouter(tags=["User"], prefix="/api/user")
