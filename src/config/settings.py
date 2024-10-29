@@ -11,4 +11,3 @@ class Settings(BaseSettings):
     ALGORITHM: str
     ACCESS_TOKEN_EXPIRE_MINUTES: int
     PATH_MODEL: str
-    PATH_SCALER: str

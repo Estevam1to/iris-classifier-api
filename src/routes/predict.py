@@ -6,13 +6,13 @@ from sqlalchemy.orm import Session
 
 from config.database import get_session
 from config.security import get_current_user
-from model.users import UserModel
+from model.models import UserModel
 from schemas.schemas import Request, Response
-from utils.prediction import Prediction
+from utils.prediction import PredictionService
 
 router = APIRouter(prefix="/api/predict", tags=["Predict"])
 
-prediction = Prediction()
+prediction = PredictionService()
 
 
 @router.post(path="/", status_code=200, response_model=Response)

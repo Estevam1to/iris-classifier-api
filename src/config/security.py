@@ -11,7 +11,7 @@ from zoneinfo import ZoneInfo
 
 from config.database import get_session
 from config.settings import Settings
-from model.users import User
+from model.models import UserModel as User
 from schemas.schemas import TokenData
 
 pwd_context = PasswordHash.recommended()
