@@ -16,9 +16,9 @@ Criei alguns teste unitários e de integração para a verificação da corretud
 
 - Monitoramento e Logging: Criei uma tabela usando o SQLAlchemy para salvar o ID do usuário e as respostas do modelo. Isso permite monitorar como a aplicação está sendo usada e pode ajudar em futuras análises ou melhorias do modelo e também serve para utilizar ferramentas como Prometheus e Grafana para o monitoramento em tempo-real da aplicação.
 
-- Implementar um pipeline de CI/CD para teste e deploy automático(caso fosse fazer isso).
+- Implementar um pipeline de CI/CD para teste e deploy automático.
 
-- Caso fosse uma api mais complexa poderia usar um outro padrão arquitetural como Clean Architecture, mas não vi necessidade ia apenas dificultar a api.
+- Para APIs mais complexas, um padrão como Clean Architecture poderia ser utilizado. No entanto, considerei desnecessário, pois aplicá-lo complicaria a API sem necessidade.
 
 - Poderia ser usado Kubernetes para orquestrar os containers, facilitando o escalonamento e gerenciamento da aplicação em um ambiente de produção.
 
