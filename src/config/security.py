@@ -9,10 +9,10 @@ from sqlalchemy.orm import Session
 from sqlalchemy.sql.expression import select
 from zoneinfo import ZoneInfo
 
-from src.config.database import get_session
-from src.config.settings import Settings
-from src.model.models import UserModel as User
-from src.schemas.schemas import TokenData
+from config.database import get_session
+from config.settings import Settings
+from model.models import UserModel as User
+from schemas.schemas import TokenData
 
 pwd_context = PasswordHash.recommended()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="api/auth/token")

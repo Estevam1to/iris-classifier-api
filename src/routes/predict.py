@@ -4,11 +4,11 @@ import numpy as np
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from src.config.database import get_session
-from src.config.security import get_current_user
-from src.model.models import UserModel
-from src.schemas.schemas import Request, Response
-from src.utils.prediction import PredictionService
+from config.database import get_session
+from config.security import get_current_user
+from model.models import UserModel
+from schemas.schemas import Request, Response
+from utils.prediction import PredictionService
 
 router = APIRouter(prefix="/api/predict", tags=["Predict"])
 

@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
-from app import app
+from src.app import app
 from src.config.database import get_session
 from src.model.models import table_registry
 

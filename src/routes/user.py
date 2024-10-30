@@ -4,10 +4,10 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy.sql.expression import select
 
-from src.config.database import get_session
-from src.config.security import get_password_hash
-from src.model.models import UserModel as User
-from src.schemas.schemas import UserPublic, UserSchema
+from config.database import get_session
+from config.security import get_password_hash
+from model.models import UserModel as User
+from schemas.schemas import UserPublic, UserSchema
 
 router = APIRouter(tags=["User"], prefix="/api/user")
 
