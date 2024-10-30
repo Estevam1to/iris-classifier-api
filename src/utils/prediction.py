@@ -2,9 +2,9 @@ import pickle
 import numpy as np
 import pandas as pd
 
-from config.settings import Settings
+from src.config.settings import Settings
 from sqlalchemy.orm import Session
-from model.models import PredictionModel
+from src.model.models import PredictionModel
 
 
 class PredictionService:

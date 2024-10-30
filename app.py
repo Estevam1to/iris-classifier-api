@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from routes import predict, auth, user
-from config.database import create_all
+from src.routes import predict, auth, user
+from src.config.database import create_all
 
 app = FastAPI()
 

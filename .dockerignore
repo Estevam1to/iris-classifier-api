@@ -1,6 +1,7 @@
 __pycache__/
-.env/
+.env
 .git/
 .vscode/
 README.md
-
+.gitignore
+.venv/
