@@ -2,8 +2,8 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
 
-from model.models import UserModel
-from config.security import get_password_hash, create_access_token
+from src.config.security import create_access_token, get_password_hash
+from src.model.models import UserModel
 
 
 @pytest.fixture
