@@ -2,7 +2,7 @@
 
 Escolhi o FastAPI como framework porque é a ferramenta com a qual tenho mais familiaridade e também porque é amplamente utilizada para o deploy de modelos de machine learning atualmente.
 
-*OBS: SUBI PARA O REPOSITÓRIO O .env e o banco de dados propositalmente para facilitar o teste da api!*
+*OBS: SUBI PARA O REPOSITÓRIO O .env e o BANCO DE DADOS PROPOSITALMENTE PARA FACILITAR O TESTE DA API!*
 
 ### Explicação da Arquitetura
 Usei uma arquitetura bem simples, parecida com o padrão MVC, tentando aplicar alguns dos princípios do SOLID para deixar o código mais organizado. Sei que alguns endpoints, como os de autenticação (auth) e usuários (user), ainda têm algumas responsabilidades que poderiam ser separadas em serviços específicos. Mas, como a aplicação é simples, achei que não precisava.
