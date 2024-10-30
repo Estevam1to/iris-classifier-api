@@ -2,22 +2,8 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
 
-from src.config.security import create_access_token, get_password_hash
+from src.config.security import get_password_hash
 from src.model.models import UserModel
-
-
-@pytest.fixture
-def user_token(session: Session):
-    user = UserModel(
-        username="testuser",
-        email="test@test.com",
-        password=get_password_hash("testpass"),
-    )
-    session.add(user)
-    session.commit()
-
-    token = create_access_token({"sub": user.email})
-    return token, user
 
 
 @pytest.fixture
@@ -42,7 +28,7 @@ def test_create_user_success(client: TestClient):
         },
     )
 
-    assert response.status_code == 201 
+    assert response.status_code == 201
     assert response.json()["username"] == "newuser"
     assert response.json()["email"] == "newuser@example.com"
 
@@ -51,7 +37,7 @@ def test_create_user_duplicate_username(client: TestClient, existing_user):
     response = client.post(
         "/api/user/users/",
         json={
-            "username": "existinguser", 
+            "username": "existinguser",
             "email": "uniqueemail@example.com",
             "password": "newpassword123",
         },
